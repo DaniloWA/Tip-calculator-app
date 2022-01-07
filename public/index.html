@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+  <div class="title">SPLI <br> TTER</div>
+  <div class="card">
+    <div class="left">
+      <p id="txtBill">Bill</p>
+      <input type="number" name="inputNumber" id="inputNumber" placeholder="0">
+      <p id="txtSelect">Select Tip %</p>
+      <div class="porcentagem">
+          <input type="button" value="5%" id="_5">
+          <input type="button" value="10%" id="_10">
+          <input type="button" value="15%" id="_15">
+          <input type="button" value="25%" id="_25">
+          <input type="button" value="50%" id="_50">
+          <input type="number" placeholder="Custom" id="Custom" class="custom">
+      </div>
+      <p id="txtPeople">Number of People</p>
+      <p id="cantbe0">Can't be zero</p>
+      <input type="number" name="peopleNum" id="peopleNum" placeholder="0">
+    </div>
+    <div class="right">
+      <div class="rightUP">
+        <h2>Tip Amout</h2>
+        <p>/ person</p>
+        <h1>$0.00</h1>
+      </div>
+      <div class="rightDown">
+        <h2>Tip Amout</h2>
+        <p>/ person</p>
+        <h1>$0.00</h1>
+      </div>
+      <input type="button" value="RESET">
+    </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Danilo Oliveira</a>.
   </div>
+  <script src="/js/main.js"></script>
 </body>
 </html>

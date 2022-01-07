@@ -1,0 +1,175 @@
+@import 'partials/var';
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body,html { 
+    background-color: $bodyBG;
+    height: 100%;
+    display: grid;
+    font-family: 'Space Mono', monospace;
+    
+}
+
+.title{
+    position: absolute;
+    left: 49.5%;
+    top: 10%;
+    font-size: 25px;
+    color: $txtTitle;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.card{
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    font-size: 12px;
+    background-color: $CardBG;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    grid-template-areas: 
+        'left right'
+    ;
+    p{
+        font-weight: 700;
+        color: $pColorCard;
+    };
+    .left{
+        box-sizing: border-box;
+        grid-area: left;
+        display: grid;
+        border-radius: 15px;
+        padding: 25px;
+        row-gap: 10px;
+        grid-template-columns: minmax(10px,90px), minmax(10px,90px), minmax(10px,90px);
+        grid-template-rows: 0.2fr 2fr 0.2fr 2fr 2fr 0.2fr 2fr;
+        grid-template-areas: 
+            'txtBill txtBill txtBill'
+            'inputNumber inputNumber inputNumber'
+            'txtSelect txtSelect txtSelect'
+            'porcentagem porcentagem porcentagem'
+            'porcentagem porcentagem porcentagem'
+            'txtPeople . cantbe0'
+            'peopleNum peopleNum peopleNum'
+        ;
+        input[type=number]{
+            box-sizing: border-box;
+            height: 100%;
+            text-align: end;
+            padding: 5px;
+            background-color: $bgColorInput;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            font-family: 'Space Mono', monospace;
+            font-size: 22px;
+        }
+        .txtBill{
+            grid-area: txtBill;
+        }
+        #inputNumber{
+            grid-area: inputNumber;
+        }
+        #txtSelect{
+            grid-area: txtSelect;
+        }
+        #txtPeople{
+            grid-area: txtPeople;
+        }
+        #cantbe0{
+            justify-self: end;
+            grid-area: cantbe0;
+        }
+        #peopleNum{
+            grid-area: peopleNum;
+        }
+        .porcentagem{
+            box-sizing: border-box;
+            grid-area: porcentagem;
+            display: grid;
+            grid-template-columns: minmax(10px,90px) minmax(10px,90px) minmax(10px,90px) ;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            grid-template-areas:  
+                ' _5 _10 _15'
+                ' _25 _50 custom'
+            ;
+            input[type=button]{
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+                border: none;
+                font-weight: bold;
+                font-size: 20px;
+                background-color: $buttonBGcolor;
+                color: $CardBG;
+            }
+           #_5{
+            grid-area: _5;
+           }
+           #_10{
+            grid-area: _10;
+           }
+           #_15{
+            grid-area: _15;
+           }
+           #_25{
+            grid-area: _25;
+           }
+           #_50{
+            grid-area: _50;
+           }
+           #custom{
+            grid-area: custom;
+           }
+
+        }
+    }
+    .right{
+        box-sizing: border-box;
+        grid-area: right;
+        background-color:$rightBGcolor;
+        display: grid;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 25px;
+    }
+}
+
+.attribution{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 12px;
+}
+.custom{
+    border: none;
+    width: 100%;
+    text-align: center!important;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: $bgColorInput;
+    color: $txtColorCustom;
+    &:hover{
+        text-align: end!important;
+        color: $buttonBGcolor;
+    }
+    &:enabled{
+        text-align: end!important;
+        color: $buttonBGcolor;
+    }
+     
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
