@@ -13,6 +13,10 @@ body,html {
     
 }
 
+.sumiu{
+    display: none;
+}
+
 .title{
     position: absolute;
     left: 49.5%;
@@ -70,6 +74,8 @@ body,html {
             font-weight: bold;
             font-family: 'Space Mono', monospace;
             font-size: 22px;
+            color: $txtTitle;
+            outline: none;
         }
         .txtBill{
             grid-area: txtBill;
@@ -111,6 +117,10 @@ body,html {
                 background-color: $buttonBGcolor;
                 color: $CardBG;
             }
+            input[type=button]:hover{
+                background-color: hsl(185, 41%, 84%);
+                color: $rightBGcolor;
+            }
            #_5{
             grid-area: _5;
            }
@@ -140,9 +150,98 @@ body,html {
         box-sizing: border-box;
         border-radius: 15px;
         padding: 25px;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 3fr 3fr 2fr 1.3fr;
+        grid-template-areas:  
+            ' rightUP rightUP '
+            ' rightDown rightDown '
+            ' . .'
+            ' resetb resetb'
+        ;
+        h1{
+            color: hsl(172, 67%, 45%);
+            font-size: 30px;
+            font-weight: bold;
+        }
+        h2{
+            font-weight: bold;
+            color: white;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .rightUP{
+            display: grid;
+            grid-area:rightUP;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                'h2UP h1UP'
+                'pUP .'
+            ;
+            #h2UP{ 
+                grid-area: h2UP;
+                align-self: center;
+            };
+            #pUP{ 
+                grid-area: pUP;
+                align-self: start;
+            };
+            #h1UP{ 
+                grid-area: h1UP;
+                justify-self: end;
+                align-self: end;
+            };
+        };
+        .rightDown{
+            grid-area: rightDown;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                'h2Down h1Down'
+                'pDown .'
+            ;
+            #h2Down{ 
+                grid-area: h2Down;
+                align-self: center;
+            };
+            #pDown{ 
+                grid-area: pDown;
+                align-self: start;
+            };
+            #h1Down{ 
+                grid-area: h1Down;
+                justify-self: end;
+                align-self: end;
+            };
+        };
+        input[type=button]{
+            grid-area: resetb;
+            border-radius: 5px;
+            border: none;
+            background-color: $seila;
+            font-weight: bold;
+            color: $txtColorCustom;
+            &:hover{
+                background-color: hsl(185, 41%, 84%);
+                color: $rightBGcolor;
+            }
+        };
+
     }
 }
-
+/*
+ grid-template-areas:  
+            ' h2UP h1UP '
+            ' pUP . '
+            ' h2Down h1Down'
+            ' pDown . '
+            ' resetb resetb '
+        ;
+        
+        
+        
+*/
 .attribution{
     position: absolute;
     bottom: 0px;
@@ -167,9 +266,19 @@ body,html {
         text-align: end!important;
         color: $buttonBGcolor;
     }
-     
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+#dolarSVG{
+    position: absolute;
+    top: 273px;
+    margin-left: 13px;
+}
+#pessoaSVG{
+    position: absolute;
+    top: 486px;
+    margin-left: 13px;
 }

@@ -11,6 +11,10 @@ body, html {
   font-family: "Space Mono", monospace;
 }
 
+.sumiu {
+  display: none;
+}
+
 .title {
   position: absolute;
   left: 49.5%;
@@ -60,6 +64,8 @@ body, html {
   font-weight: bold;
   font-family: "Space Mono", monospace;
   font-size: 22px;
+  color: #00494d;
+  outline: none;
 }
 .card .left .txtBill {
   grid-area: txtBill;
@@ -99,6 +105,10 @@ body, html {
   background-color: #00494d;
   color: white;
 }
+.card .left .porcentagem input[type=button]:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
+}
 .card .left .porcentagem #_5 {
   grid-area: _5;
 }
@@ -125,8 +135,86 @@ body, html {
   box-sizing: border-box;
   border-radius: 15px;
   padding: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 3fr 2fr 1.3fr;
+  grid-template-areas: " rightUP rightUP " " rightDown rightDown " " . ." " resetb resetb";
+}
+.card .right h1 {
+  color: #26c0ab;
+  font-size: 30px;
+  font-weight: bold;
+}
+.card .right h2 {
+  font-weight: bold;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.card .right .rightUP {
+  display: grid;
+  grid-area: rightUP;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "h2UP h1UP" "pUP .";
+}
+.card .right .rightUP #h2UP {
+  grid-area: h2UP;
+  align-self: center;
+}
+.card .right .rightUP #pUP {
+  grid-area: pUP;
+  align-self: start;
+}
+.card .right .rightUP #h1UP {
+  grid-area: h1UP;
+  justify-self: end;
+  align-self: end;
+}
+.card .right .rightDown {
+  grid-area: rightDown;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "h2Down h1Down" "pDown .";
+}
+.card .right .rightDown #h2Down {
+  grid-area: h2Down;
+  align-self: center;
+}
+.card .right .rightDown #pDown {
+  grid-area: pDown;
+  align-self: start;
+}
+.card .right .rightDown #h1Down {
+  grid-area: h1Down;
+  justify-self: end;
+  align-self: end;
+}
+.card .right input[type=button] {
+  grid-area: resetb;
+  border-radius: 5px;
+  border: none;
+  background-color: #7f9c9f;
+  font-weight: bold;
+  color: #5e7a7d;
+}
+.card .right input[type=button]:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
 }
 
+/*
+ grid-template-areas:  
+            ' h2UP h1UP '
+            ' pUP . '
+            ' h2Down h1Down'
+            ' pDown . '
+            ' resetb resetb '
+        ;
+
+
+
+*/
 .attribution {
   position: absolute;
   bottom: 0px;
@@ -157,5 +245,17 @@ body, html {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+#dolarSVG {
+  position: absolute;
+  top: 273px;
+  margin-left: 13px;
+}
+
+#pessoaSVG {
+  position: absolute;
+  top: 486px;
+  margin-left: 13px;
 }
 /*# sourceMappingURL=style.css.map */
