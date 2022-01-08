@@ -16,6 +16,10 @@ body,html {
 .sumiu{
     display: none;
 }
+.focado{
+    background-color: hsl(185, 41%, 84%)!important;
+    color: $rightBGcolor!important;
+}
 
 .title{
     position: absolute;

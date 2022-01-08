@@ -15,6 +15,11 @@ body, html {
   display: none;
 }
 
+.focado {
+  background-color: #c5e4e7 !important;
+  color: #00494d !important;
+}
+
 .title {
   position: absolute;
   left: 49.5%;
